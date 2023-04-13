@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/background"
+        tools:context=".MainActivity">
+
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/app_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cost_of_service"
+            app:srcCompat="@drawable/arrow_right" />
+
+        <EditText
+            android:id="@+id/cost_of_service"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="50dp"
+            android:hint="@string/add_cost_of_service"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/service_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/describeService"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cost_of_service" />
+
+        <RadioGroup
+            android:id="@+id/tip_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/tip_third_option"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/service_question">
+
+            <RadioButton
+                android:id="@+id/tip_first_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amazing"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip_options" />
+
+            <RadioButton
+                android:id="@+id/tip_second_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/good"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip_first_option" />
+
+            <RadioButton
+                android:id="@+id/tip_third_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/okay"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip_second_option" />
+        </RadioGroup>
+
+
+        <ImageView
+            android:id="@+id/love"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@string/app_logo"
+            app:layout_constraintStart_toEndOf="@id/tip_options"
+            app:layout_constraintTop_toTopOf="@id/tip_options"
+            app:srcCompat="@drawable/inlove" />
+
+        <ImageView
+            android:id="@+id/smile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/app_logo"
+            app:layout_constraintStart_toStartOf="@id/love"
+            app:layout_constraintTop_toBottomOf="@id/love"
+            app:srcCompat="@drawable/smile" />
+
+        <ImageView
+            android:id="@+id/not_great"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/app_logo"
+            app:layout_constraintStart_toStartOf="@id/smile"
+            app:layout_constraintTop_toBottomOf="@id/smile"
+            app:srcCompat="@drawable/meh" />
+
+        <Switch
+            android:id="@+id/round_up_switch"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:checked="true"
+            android:text="@string/round_up_tip"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tip_options"
+            app:layout_constraintTop_toBottomOf="@id/tip_options"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+
+            app:backgroundTint="@color/button_color"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/round_up_switch"
+            app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
+
+        <TextView
+            android:id="@+id/tip_result"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/tip_amount"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate_button" />
+
+        <ImageView
+            android:id="@+id/dollar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/app_logo"
+            android:visibility="invisible"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toEndOf="@id/tip_result2"
+            app:layout_constraintTop_toTopOf="@id/tip_result2"
+            app:srcCompat="@drawable/dollar" />
+
+        <TextView
+            android:id="@+id/tip_result2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:contentDescription="@string/placeholder_for_result"
+            android:text=" "
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate_button"
+            tools:ignore="TextSizeCheck" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="250dp"
+            android:contentDescription="@string/app_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate_button"
+            app:srcCompat="@drawable/kotlinlogo2"
+            tools:ignore="VisualLintBounds" />
+ 
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
